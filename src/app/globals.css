@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #241d18;
+  --muted: #766a61;
+  --cream: #f8f4ed;
+  --paper: #fffdf9;
+  --clay: #a54f38;
+  --clay-dark: #7d3828;
+  --sage: #75816a;
+  --line: #e7ded2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--clay);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-dark {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 999px;
+  padding: 0 22px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: 180ms ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: 1px solid var(--clay);
+  background: var(--clay);
+  color: white;
+}
+
+.btn-primary:hover {
+  border-color: var(--clay-dark);
+  background: var(--clay-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: white;
+}
+
+.btn-dark {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+}
+
+.btn-dark:hover {
+  background: #43372f;
+}
+
+.icon-button {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: 160ms ease;
+}
+
+.icon-button:hover {
+  background: #f2ebe1;
+}
+
+.field {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: 0;
+  background: white;
+  padding: 0 14px;
+  color: var(--ink);
+  transition: border 160ms ease, box-shadow 160ms ease;
+}
+
+.field:focus {
+  border-color: var(--clay);
+  box-shadow: 0 0 0 3px rgb(165 79 56 / 10%);
+}
+
+.product-image {
+  background-color: #eee6dc;
+  background-image: var(--product-image);
+  background-position: var(--image-position, 0% 0%);
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+}
+
+.soft-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 12px 40px rgb(77 55 40 / 5%);
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 24px, 1180px);
+  }
+}
