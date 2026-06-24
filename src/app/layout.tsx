@@ -4,11 +4,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Lumière Atelier | Modern Fashion",
-    template: "%s | Lumière Atelier",
+    default: "CarCare Demo",
+    template: "%s | CarCare Demo",
   },
-  description:
-    "A modern Malaysian fashion boutique for considered everyday dressing.",
+  description: "A demo car care booking app for tyres, batteries, stock, and quotes.",
 };
 
 export default function RootLayout({

@@ -11,7 +11,7 @@ import {
 type DemoUser = {
   name: string;
   email: string;
-  role: "customer" | "owner";
+  role: "customer" | "admin";
 };
 
 type AuthContextValue = {
@@ -22,7 +22,7 @@ type AuthContextValue = {
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
-const STORAGE_KEY = "lumiere-demo-user";
+const STORAGE_KEY = "car-care-demo-user";
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<DemoUser | null>(null);
@@ -45,7 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const nextUser = {
           email,
           role,
-          name: role === "owner" ? "Shop Owner" : email.split("@")[0],
+          name: role === "admin" ? "Admin" : email.split("@")[0],
         } as DemoUser;
         setUser(nextUser);
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(nextUser));

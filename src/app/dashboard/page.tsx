@@ -1,7 +1,7 @@
 import { OwnerDashboard } from "@/components/owner-dashboard";
 
 export const metadata = {
-  title: "Owner Dashboard",
+  title: "Admin Dashboard",
 };
 
 export default function DashboardPage() {

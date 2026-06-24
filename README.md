@@ -1,33 +1,17 @@
-# Lumière Atelier
+# CarCare Demo
 
-A mobile-friendly fashion shop built with Next.js, TypeScript, Tailwind CSS,
-Supabase, Stripe Checkout, and Resend.
+A demo car care booking app built with Next.js, TypeScript, Tailwind CSS, and browser storage.
 
 ## Included
 
-- Product catalogue with size and colour stock variants
-- Persistent guest cart with account-required checkout
-- Malaysia delivery and free store pickup
-- Card and FPX payments, plus cash for pickup
-- Customer order history and status tracking
-- Owner dashboard for orders, products, announcements, and delivery settings
-- Stripe webhook, Supabase schema with Row Level Security, and email helper
-
-The app runs in demo mode without external credentials. Demo authentication and
-orders use browser state and seeded data. Add production credentials to connect
-the existing integration modules.
-
-## GitHub Pages demo
-
-The repository includes a GitHub Actions workflow that publishes a static demo.
-The demo keeps the storefront, cart, account gate, checkout choices, sample
-orders, and owner dashboard. Checkout creates a browser-only sample order, so it
-does not take payment or write to a live database.
-
-In the GitHub repository settings, select **GitHub Actions** as the Pages source.
-The public demo will then be available at:
-
-`https://ahfung03.github.io/fashion-shop/`
+- Customer car brand and car type selection
+- Tyre size and battery size fitment lookup
+- Tyre and battery stock filtered by matching size
+- Booking request flow with estimated price
+- Admin dashboard for customer requests, final quotes, availability, and status
+- Admin stock manager for tyre and battery price, size, quantity, and active state
+- Admin fitment manager for car type to tyre and battery size mapping
+- Demo customer and admin sign-in
 
 ## Run locally
 
@@ -35,17 +19,18 @@ The public demo will then be available at:
 npm.cmd run dev
 ```
 
-Open `http://localhost:3000`. The owner dashboard is at `/dashboard`.
+Open `http://localhost:3000`.
 
-## Production setup
+The admin dashboard is at `http://localhost:3000/dashboard`. Use the demo admin button if you are not signed in.
 
-1. Copy `.env.example` to `.env.local` and fill in Supabase, Stripe, and Resend values.
-2. Run `supabase/schema.sql` in the Supabase SQL editor.
-3. Create a public Supabase Storage bucket for product images.
-4. Register `/api/webhooks/stripe` as a Stripe webhook endpoint for
-   `checkout.session.completed`.
-5. Give the shop owner a `profiles.role` value of `owner`.
+## Checks
 
-The current UI uses seeded products until the product queries are switched to
-Supabase. Checkout already validates prices and stock from trusted server-side
-data rather than accepting totals from the browser.
+```powershell
+npm.cmd run lint
+npm.cmd run test
+npm.cmd run build
+```
+
+## Data mode
+
+This version uses browser localStorage as the demo database. Admin changes persist in the same browser until the demo data is reset or browser storage is cleared. Supabase files are still in the repository for a future real SQL database version, but this flow does not depend on Supabase.

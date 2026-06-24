@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #241d18;
-  --muted: #766a61;
-  --cream: #f8f4ed;
-  --paper: #fffdf9;
-  --clay: #a54f38;
-  --clay-dark: #7d3828;
-  --sage: #75816a;
-  --line: #e7ded2;
+  --ink: #1f2522;
+  --muted: #617069;
+  --cream: #eef3ef;
+  --paper: #f5f6f3;
+  --clay: #1f4336;
+  --clay-dark: #163126;
+  --sage: #607d68;
+  --line: #dfe5dd;
 }
 
 * {
@@ -68,7 +68,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 0 22px;
   font-size: 0.78rem;
   font-weight: 800;
@@ -117,7 +117,7 @@ a {
   height: 42px;
   place-items: center;
   border: 0;
-  border-radius: 50%;
+  border-radius: 8px;
   background: transparent;
   color: var(--ink);
   cursor: pointer;
@@ -132,7 +132,7 @@ a {
   width: 100%;
   min-height: 48px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   outline: 0;
   background: white;
   padding: 0 14px;
@@ -155,9 +155,9 @@ a {
 
 .soft-card {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 8px;
   background: white;
-  box-shadow: 0 12px 40px rgb(77 55 40 / 5%);
+  box-shadow: 0 10px 28px rgb(31 67 54 / 5%);
 }
 
 @media (max-width: 720px) {
